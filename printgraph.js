@@ -10,20 +10,20 @@ class Graph{
   this.listadj.get(v).push(w);
   this.listadj.get(w).push(v);
  }
- printgraph(){ 
+ printgraph(){
   var getkeys = this.listadj.keys();
   for(var i of getkeys){
-      var conc = "";
-      var listsommet = this.listadj.get(i);
-      for(var j of listsommet)
-         conc = conc + j;
-   console.log(i + " " + "->" + " " + conc);
+    var conc = " ";
+    var listsommet = this.listadj.get(i);
+    for(var j of  listsommet)
+       conc = conc + j;
+  console.log(i + " " + "->" + " " +conc);  
   }
- }// fin printgraph
-}//fin class graph
-var tab=['A','B','C','D','E','F','G','H','I','J','K'];
-var test = new Graph(11);
-for(var i = 0; i < tab.length; i++)
+ }
+}// fin class Graph
+ var test = new Graph(11);
+ var tab = ['A','B','C','D','E','F','G','H','I','J','K'];
+ for(var i = 0; i < tab.length; i++)
     test.addsommet(tab[i]);
     test.addchemin('A','B');
     test.addchemin('A','C');
@@ -37,12 +37,23 @@ for(var i = 0; i < tab.length; i++)
     test.addchemin('E','F');
     test.addchemin('F','G');
     test.addchemin('F','H');
-    test.addchemin('G','H');
     test.addchemin('G','J');
-    test.addchemin('H','K');
+    test.addchemin('G','H');
     test.addchemin('H','I');
+    test.addchemin('H','K');
     test.addchemin('I','J');
     test.addchemin('J','K');
-   // test.printgraph();
-   console.log(" Notre graphe :");
-   test.printgraph();
+    test.printgraph();
+
+
+
+// obtenir les proprietes d'un objet
+
+
+/*  recup keys d'un object
+function nbre_obj(){
+ var test = {"a":1, "b":2 ,3:4};
+ var recup = Object.keys(test);
+ return recup.length;
+}
+nbre_obj(); */
