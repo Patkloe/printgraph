@@ -16,7 +16,7 @@ class Graph{
    var conc = " ";
    var listsommets = this.listadj.get(i);
    for(var j in listsommets)
-      conc = conc + j;
+      conc = conc + listsommets[j];
    console.log(i + " " + "->" + " " + conc);
   }
  }// fin printgraph
@@ -48,13 +48,3 @@ for (var i = 0; i < tab.length; i++)
 
 
 
-// obtenir les proprietes d'un objet
-
-
-/*  recup keys d'un object
-function nbre_obj(){
- var test = {"a":1, "b":2 ,3:4};
- var recup = Object.keys(test);
- return recup.length;
-}
-nbre_obj(); */
