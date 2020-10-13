@@ -13,37 +13,38 @@ class Graph{
  printgraph(){
   var getkeys = this.listadj.keys();
   for(var i of getkeys){
-    var conc = " ";
-    var listsommet = this.listadj.get(i);
-    for(var j of  listsommet)
-       conc = conc + j;
-  console.log(i + " " + "->" + " " +conc);  
+   var conc = " ";
+   var listsommets = this.listadj.get(i);
+   for(var j in listsommets)
+      conc = conc + j;
+   console.log(i + " " + "->" + " " + conc);
   }
- }
+ }// fin printgraph
 }// fin class Graph
- var test = new Graph(11);
- var tab = ['A','B','C','D','E','F','G','H','I','J','K'];
- for(var i = 0; i < tab.length; i++)
+var test = new Graph(10);
+var tab = ['A','B','C','D','E','F','G','H','I','J'];
+for (var i = 0; i < tab.length; i++)
     test.addsommet(tab[i]);
     test.addchemin('A','B');
     test.addchemin('A','C');
     test.addchemin('A','D');
-    test.addchemin('B','C');
+    test.addchemin('A','E');
     test.addchemin('B','E');
-    test.addchemin('C','F');
-    test.addchemin('C','G');
+    test.addchemin('C','D');
+    test.addchemin('C','E');
     test.addchemin('D','G');
-    test.addchemin('D','J');
     test.addchemin('E','F');
+    test.addchemin('E','H');
     test.addchemin('F','G');
     test.addchemin('F','H');
-    test.addchemin('G','J');
     test.addchemin('G','H');
-    test.addchemin('H','I');
-    test.addchemin('H','K');
+    test.addchemin('G','I');
+    test.addchemin('H','J');
     test.addchemin('I','J');
-    test.addchemin('J','K');
     test.printgraph();
+
+
+
 
 
 
