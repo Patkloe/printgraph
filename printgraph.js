@@ -1,7 +1,7 @@
 class Graph{
  constructor(nbresommets){
-  this.nbresommets = nbresommets;
-  this.listadj = new Map();
+   this.nbresommets = nbresommets;
+   this.listadj = new Map();
  }
  addsommet(v){
   this.listadj.set(v,[]);
@@ -13,35 +13,43 @@ class Graph{
  printgraph(){
   var getkeys = this.listadj.keys();
   for(var i of getkeys){
-   var conc = " ";
-   var listsommets = this.listadj.get(i);
-   for(var j in listsommets)
-      conc = conc + listsommets[j];
-   console.log(i + " " + "->" + " " + conc);
+     var conc = " ";
+     var listsommet = this.listadj.get(i);
+     for(var j of listsommet)
+        conc = conc + j;
+   console.log(i + " " + " ->" + " " + conc);
   }
- }// fin printgraph
-}// fin class Graph
-var test = new Graph(10);
-var tab = ['A','B','C','D','E','F','G','H','I','J'];
-for (var i = 0; i < tab.length; i++)
-    test.addsommet(tab[i]);
-    test.addchemin('A','B');
-    test.addchemin('A','C');
-    test.addchemin('A','D');
-    test.addchemin('A','E');
-    test.addchemin('B','E');
-    test.addchemin('C','D');
-    test.addchemin('C','E');
-    test.addchemin('D','G');
-    test.addchemin('E','F');
-    test.addchemin('E','H');
-    test.addchemin('F','G');
-    test.addchemin('F','H');
-    test.addchemin('G','H');
-    test.addchemin('G','I');
-    test.addchemin('H','J');
-    test.addchemin('I','J');
-    test.printgraph();
+ }
+}//end class graph
+var tab = ['A','B','C','D','E','D','F','G','H','I','J','K','L','M','N','O'];
+var test = new Graph(16);
+for (var i =0; i < tab.length; i++)
+      test.addsommet(tab[i]);
+      test.addchemin('A','B');
+      test.addchemin('A','C');
+      test.addchemin('A','L');
+      test.addchemin('B','M');
+      test.addchemin('B','D');
+      test.addchemin('C','E');
+      test.addchemin('D','G');
+      test.addchemin('D','E');
+      test.addchemin('E','H');
+      test.addchemin('F','H');
+      test.addchemin('F','J');
+      test.addchemin('F','K');
+      test.addchemin('F','L');
+      test.addchemin('G','M');
+      test.addchemin('G','I');
+      test.addchemin('H','I');
+      test.addchemin('H','N');
+      test.addchemin('J','O');
+      test.addchemin('J','K');
+      test.addchemin('K','O');
+      test.addchemin('K','L');
+      test.addchemin('M','N');
+      test.addchemin('N','O');
+      console.log("OUR GRAPH");
+      test.printgraph();
 
 
 
